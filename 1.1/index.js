@@ -18,6 +18,4 @@ const scan = () => {
     throw new Error('No match')
 }
 
-const [firstDigit, secondDigit] = scan()
-
-console.log(firstDigit * secondDigit)
+console.log(scan().reduce((previous, current) => previous * current))
