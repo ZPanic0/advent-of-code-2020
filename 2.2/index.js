@@ -15,7 +15,7 @@ for (let input of inputs) {
 
     validCount +=
         password[firstIndex - 1] === character ^
-            password[secondIndex - 1] == character ? 1 : 0
+            password[secondIndex - 1] == character
 }
 
 console.log(validCount)
