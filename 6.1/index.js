@@ -1,5 +1,3 @@
-const { group } = require('console')
-
 const inputs = require('fs')
     .readFileSync('./input.txt')
     .toString()
