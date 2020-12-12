@@ -27,10 +27,10 @@ const navigate = (currentLocation, input) => {
 
     switch (instruction) {
         case 'N':
-            currentLocation.y -= magnitude
+            currentLocation.y += magnitude
             break
         case 'S':
-            currentLocation.y += magnitude
+            currentLocation.y -= magnitude
             break
         case 'W':
             currentLocation.x -= magnitude
