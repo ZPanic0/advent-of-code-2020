@@ -14,7 +14,7 @@ const mapInputs = () => {
     const thisGrid = new Set()
 
     for (let y = 0; y < inputs.length; y++) {
-        const lineElements = inputs[y].split('')
+        const lineElements = inputs[y]
 
         for (let x = 0; x < lineElements.length; x++) {
             lineElements[x] === '#' && thisGrid.add(`${x},${y},0,0`)
@@ -52,12 +52,10 @@ function countAdjacentPoints(points) {
 
 const simulatePoint = (thisGrid, point) => {
     const pointString = toPointString(point)
-    const isActive = thisGrid.has(pointString)
     const activeNeighborCount = countAdjacentPoints(getAdjacentPoints(thisGrid, point))
 
     if (activeNeighborCount === 3) return true
-    if (isActive && activeNeighborCount === 2) return true
-    return false
+    return thisGrid.has(pointString) && activeNeighborCount === 2
 }
 
 const simulate = oldGrid => {
